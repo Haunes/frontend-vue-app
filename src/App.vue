@@ -84,7 +84,7 @@ export default {
     },
     async registerUser() {
       try {
-        const response = await axios.post('http://ec2-3-89-119-38.compute-1.amazonaws.com:5000/register', {
+        const response = await axios.post('http://ec2-3-80-31-23.compute-1.amazonaws.com:5000/register', {
           nombres: this.nombres,
           apellidos: this.apellidos,
           fecha_nacimiento: this.fecha_nacimiento,
@@ -98,7 +98,7 @@ export default {
     },
     async loginUser() {
       try {
-        const response = await axios.post('http://ec2-3-89-119-38.compute-1.amazonaws.com:5000/login', {
+        const response = await axios.post('http://ec2-3-80-31-23.compute-1.amazonaws.com:5000/login', {
           nombres: this.loginNombre,
           password: this.loginPassword
         });
@@ -115,7 +115,7 @@ export default {
     // Obtener usuarios registrados tras el login
     async fetchUsers() {
       try {
-        const response = await axios.get('http://ec2-3-89-119-38.compute-1.amazonaws.com:5000/users');
+        const response = await axios.get('http://ec2-3-80-31-23.compute-1.amazonaws.com:5000/users');
         this.users = response.data;
         this.viewForm = 'userList'; // Cambiamos la vista para mostrar la lista de usuarios
       } catch (error) {
